@@ -1,6 +1,6 @@
 
 name: Exemplo Input
-run-name: Exemplo workflow para input, executado por ${{ github.actor}}
+run-name: Exemplo workflow para input, executado por ${{ github.actor }}
 on:
   workflow_dispatch:
     inputs:
@@ -25,6 +25,7 @@ on:
           - dev
           - hml
           - prd
+          
 jobs:
   valores_inputs:
     runs-on: ubuntu-latest
@@ -37,5 +38,5 @@ jobs:
            echo: "Esses são os valores fornecidos no input"
            echo: "A versão da app é: ${{ inputs.versao }}"
            echo: "O numero do card é: ${{ inputs.numero_card }}"
-           echo: "Deve fazer deploy: ${{ inputs.fazer_deploy}}"
-           echo: "Ambiente de deploy: ${{ inputs.ambiente}}"
+           echo: "Deve fazer deploy: ${{ inputs.fazer_deploy }}"
+           echo: "Ambiente de deploy: ${{ inputs.ambiente }}"
