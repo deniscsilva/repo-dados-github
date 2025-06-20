@@ -1,17 +1,18 @@
+
 name: Exemplo Input
-run-name: Exemplo workflow para input, executado por ${{ github.actor }}
+run-name: Exemplo workflow para input, executado por ${{ github.actor}}
 on:
   workflow_dispatch:
     inputs:
       versao:
         type: string
         required: true
-        default: "dev"
-        description: "Versão da nova release"
+        default: "v1.0"
+        description: "Versao da nova release"
       numero_card:
         type: number
         required: true
-        description: "Número do card da tarefa desse commit"
+        description: "Numero do card da tarefa desse commit"
       fazer_deploy:
         type: boolean
         required: true
@@ -19,23 +20,22 @@ on:
       ambiente:
         type: choice
         required: true
-        description: "Ambiente de deploy"
+        description: "ambiente de deploy"
         options:
           - dev
           - hml
           - prd
-
 jobs:
   valores_inputs:
     runs-on: ubuntu-latest
     steps:
-      - name: Exibindo o contexto de Input completo
-        run: echo "${{ toJson(inputs) }}"
+       - name: Exibindo o contexto de Input completo
+       - run: echo "${{ toJson(inputs) }}"
 
-      - name: Exibindo valores individualmente
-        run: |
-          echo "Esses são os valores fornecidos no input"
-          echo "A versão da app é: ${{ inputs.versao }}"
-          echo "O número do card é: ${{ inputs.numero_card }}"
-          echo "Deve fazer deploy: ${{ inputs.fazer_deploy }}"
-          echo "Ambiente de deploy: ${{ inputs.ambiente }}"
+       - name: Exibindo valores individualmente
+       - run: |
+           echo: "Esses são os valores fornecidos no input"
+           echo: "A versão da app é: ${{ inputs.versao }}"
+           echo: "O numero do card é: ${{ inputs.numero_card }}"
+           echo: "Deve fazer deploy: ${{ inputs.fazer_deploy}}"
+           echo: " Ambiente de deploy: ${{ inputs.ambiente}}"
