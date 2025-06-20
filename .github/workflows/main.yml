@@ -31,6 +31,13 @@ jobs:
     steps:
        - name: Exibindo o contexto de Input completo
        - run: echo "${{toJson(inputs)}}"
+       - name: Exibindo valores individualmente
+       - run: |
+           echo "Esses são os valores fornecidos no input"
+           echo: "A versão da app é: ${{ inputs.versao }}"
+           acho: "O numero do card é: ${{ inputs.numero_card }}"
+           echo: "Deve fazer deploy: ${{ inputs.fazer_deploy}}"
+           echo: " Ambiente de deploy: ${{ inputs.ambiente}}"
         
       
           
