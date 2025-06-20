@@ -31,10 +31,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
        - name: Exibindo o contexto de Input completo
-       - run: echo "${{ toJson(inputs) }}"
+         run: echo "${{ toJson(inputs) }}"
 
        - name: Exibindo valores individualmente
-       - run: |
+         run: |
            echo "Esses são os valores fornecidos no input"
            echo "A versão da app é: ${{ inputs.versao }}"
            echo "O numero do card é: ${{ inputs.numero_card }}"
