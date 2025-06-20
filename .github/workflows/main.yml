@@ -11,7 +11,7 @@ on:
         description: "Versao da nova release"
       numero_card:
         type: number
-        required: true:
+        required: true
         description: "Numero do card da tarefa desse commit"
       fazer_deploy:
         type: boolean
